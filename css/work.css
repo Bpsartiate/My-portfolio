@@ -1,0 +1,356 @@
+.wildlife-section .title {
+  font-family: "Raleway";
+  font-size: 24px;
+  font-weight: 700;
+  color: #5d4037;
+  text-align: center;
+}
+.wildlife-section p {
+  line-height: 1.5em;
+}
+.wildlife-section h1 + p,
+.wildlife-section p + p {
+  margin-top: 10px;
+}
+.wildlife-section .container {
+  padding: 40px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.wildlife-section .card-wrap {
+  margin: 10px;
+  transform: perspective(800px);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.wildlife-section .card-wrap:hover .card-info {
+  transform: translateY(0);
+}
+.wildlife-section .card-wrap:hover .card-info p {
+  opacity: 1;
+}
+.wildlife-section .card-wrap:hover .card-info,
+.wildlife-section .card-wrap:hover .card-info p {
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.wildlife-section .card-wrap:hover .card-info:after {
+  transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 1;
+  transform: translateY(0);
+}
+.wildlife-section .card-wrap:hover .card-bg {
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0.8;
+}
+.wildlife-section .card-wrap:hover .card {
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: rgba(255, 255, 255, 0.2) 0 0 40px 5px, white 0 0 0 1px, rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset white 0 0 0 6px;
+}
+.wildlife-section .card {
+  position: relative;
+  flex: 0 0 240px;
+  width: 240px;
+  height: 320px;
+  background-color: #333;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.wildlife-section .card-bg {
+  opacity: 0.5;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95), opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  pointer-events: none;
+}
+.wildlife-section .card-info {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  transform: translateY(40%);
+  transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wildlife-section .card-info p {
+  opacity: 0;
+  text-shadow: black 0 2px 3px;
+  transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wildlife-section .card-info * {
+  position: relative;
+  z-index: 1;
+}
+.wildlife-section .card-info:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+  background-blend-mode: overlay;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.wildlife-section .card-info h1 {
+  font-family: "Playfair Display";
+  font-size: 36px;
+  font-weight: 700;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
+}
+.wildlife-section .card-info a {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  vertical-align: top;
+}
+.wildlife-section .card-info a::before, .wildlife-section .card-info a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+.wildlife-section .card-info a::before {
+  background-color: #ffffff;
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.wildlife-section .card-info a::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  color: #ffffff;
+}
+.wildlife-section .card-info a:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+.wildlife-section .card-info a:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+.wildlife-section .card-info a:hover span {
+  transform: translate3d(-200%, 0, 0);
+}
+.wildlife-section .card-info a span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.wildlife-section .card-info h1:hover {
+  text-decoration: underline;
+  text-shadow: rgba(0, 0, 0, 0.5) 10px;
+}
+
+@media (max-width: 767px) {
+  .mobile-hide {
+    display: none !important;
+  }
+}
+.myProfile {
+  transition: 0.25s ease;
+}
+.myProfile:hover {
+  transform: rotate(5deg);
+}
+.myProfile:hover .card:before {
+  transform: translatey(-2%) rotate(-4deg);
+}
+.myProfile:hover .card:after {
+  transform: translatey(2%) rotate(4deg);
+}
+
+.myProfile .card {
+  aspect-ratio: 3/2;
+  border: 10px solid #ffffff;
+  background-color: #060606;
+  position: relative;
+  transition: 0.15s ease;
+  cursor: pointer;
+}
+.myProfile .card:before, .myProfile .card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 10px solid #ffffff;
+  background-color: rgba(27, 26, 26, 0.2352941176);
+  transform-origin: center center;
+  z-index: -1;
+  transition: 0.15s ease;
+  top: 0;
+  left: 0;
+}
+.myProfile .card:before {
+  transform: translatey(-2%) rotate(-6deg);
+}
+.myProfile .card:after {
+  transform: translatey(2%) rotate(6deg);
+}
+
+.myProfile .image {
+  background-image: url("../imgs/uuundulate.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+@supports (aspect-ratio: 1/1) {
+  .browser-warning {
+    display: none;
+  }
+}
+.bubbly-button {
+  font-family: "Helvetica", "Arial", sans-serif;
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  background-color: #009d1a;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px rgba(1, 125, 44, 0.585);
+}
+.bubbly-button:focus {
+  outline: 0;
+}
+.bubbly-button:before, .bubbly-button:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #009d1a 20%, transparent 20%), radial-gradient(circle, transparent 20%, #009d1a 20%, transparent 30%), radial-gradient(circle, #009d1a 20%, transparent 20%), radial-gradient(circle, #009d1a 20%, transparent 20%), radial-gradient(circle, transparent 10%, #009d1a 15%, transparent 20%), radial-gradient(circle, #009d1a 20%, transparent 20%), radial-gradient(circle, #009d1a 20%, transparent 20%), radial-gradient(circle, #009d1a 20%, transparent 20%), radial-gradient(circle, #009d1a 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #009d1a 20%, transparent 20%), radial-gradient(circle, #009d1a 20%, transparent 20%), radial-gradient(circle, transparent 10%, #009d1a 15%, transparent 20%), radial-gradient(circle, #009d1a 20%, transparent 20%), radial-gradient(circle, #009d1a 20%, transparent 20%), radial-gradient(circle, #009d1a 20%, transparent 20%), radial-gradient(circle, #009d1a 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.bubbly-button:active {
+  transform: scale(0.9);
+  background-color: #008416;
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+.bubbly-button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+.bubbly-button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1750px);
+  }
+}
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 50px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 960px;
+}
+.slider::before, .slider::after {
+  background: linear-gradient(to right, rgba(236, 231, 231, 0.401) 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track {
+  animation: scroll 20s linear infinite;
+  display: flex;
+  width: 2800px;
+}
+.slider .slide-track img {
+  width: 50%;
+  height: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 0;
+  margin: 0;
+}
+.slider .slide {
+  height: 96px;
+  width: 200px;
+}/*# sourceMappingURL=work.css.map */

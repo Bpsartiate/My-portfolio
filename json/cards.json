@@ -1,0 +1,33 @@
+[
+  {
+    "title": {
+      "text": "kivu gaming store",
+      "link": "https://kivu-gaming-store.vercel.app/"
+    },
+    "icons": [
+      "<i class='fa-brands fa-react'></i>",
+      "<i class='fa-brands fa-css3'></i>",
+      "Tailwing"
+    ],
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "image": "imgs/kivu.jpeg"
+  },
+  {
+    "title": {
+      "text": "Work2",
+      "link": "https://example.com/work2"
+    },
+    "icons": ["", "", ""],
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "image": "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop="
+  },
+  {
+    "title": {
+      "text": "Work3",
+      "link": "https://example.com/work3"
+    },
+    "icons": ["", "", ""],
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "image": "https://images.unsplash.com/photo-1479644025832-60dabb8be2a1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop="
+  }
+]
