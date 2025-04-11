@@ -311,46 +311,90 @@
     transform: translateX(-1750px);
   }
 }
-.slider {
-  background: white;
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-  height: 50px;
-  margin: auto;
+.logo-slider {
   overflow: hidden;
+  padding: 10px 0 0 0;
+  white-space: nowrap;
   position: relative;
-  width: 960px;
 }
-.slider::before, .slider::after {
-  background: linear-gradient(to right, rgba(236, 231, 231, 0.401) 0%, rgba(255, 255, 255, 0) 100%);
-  content: "";
-  height: 100px;
-  position: absolute;
-  width: 200px;
-  z-index: 2;
+.logo-slider:hover .logos-slide {
+  animation-play-state: paused;
 }
-.slider::after {
-  right: 0;
-  top: 0;
-  transform: rotateZ(180deg);
+.logo-slider .logos-slide {
+  display: inline-flex;
+  animation: 20s slide infinite linear;
 }
-.slider::before {
-  left: 0;
-  top: 0;
+.logo-slider .logos-slide img {
+  width: 160px;
+  height: 30px;
+  margin: 0 40px;
 }
-.slider .slide-track {
-  animation: scroll 20s linear infinite;
-  display: flex;
-  width: 2800px;
+@media (max-width: 768px) {
+  .logo-slider .logos-slide img {
+    width: 120px;
+    height: 25px;
+    margin: 0 20px;
+  }
 }
-.slider .slide-track img {
-  width: 50%;
-  height: 50%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  padding: 0;
-  margin: 0;
+@media (max-width: 576px) {
+  .logo-slider .logos-slide img {
+    width: 80px;
+    height: 20px;
+    margin: 0 10px;
+  }
 }
-.slider .slide {
-  height: 96px;
-  width: 200px;
+@media (max-width: 400px) {
+  .logo-slider .logos-slide img {
+    width: 60px;
+    height: 15px;
+    margin: 0 5px;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% + 160px));
+  }
+}
+@media (max-width: 768px) {
+  .logos-slide {
+    animation: 20s slide-768 infinite linear;
+  }
+}
+@media (max-width: 576px) {
+  .logos-slide {
+    animation: 20s slide-576 infinite linear;
+  }
+}
+@media (max-width: 400px) {
+  .logos-slide {
+    animation: 20s slide-400 infinite linear;
+  }
+}
+@keyframes slide-768 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% + 120px));
+  }
+}
+@keyframes slide-576 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% + 80px));
+  }
+}
+@keyframes slide-400 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% + 60px));
+  }
 }/*# sourceMappingURL=work.css.map */

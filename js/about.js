@@ -22,3 +22,6 @@ const profile = document.getElementById("profile");
 //     profile.classList.add("bg-white");
 //   }
 // });
+// sliider
+var copy = document.querySelector(".logos-slide").cloneNode(true);
+document.querySelector(".logo-slider").appendChild(copy);
